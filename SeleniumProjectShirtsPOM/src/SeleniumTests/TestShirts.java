@@ -25,7 +25,7 @@ public class TestShirts {
         
         driver.get("http://www.golfkids.co.il");
         driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-        golf.searchItem("ηεμφεϊ");
+        golf.searchItem("Γ§Γ¥Γ¬Γ¶Γ¥ΓΊ");
         double golfShirt=golfS.getPrice();
         
         driver.get("https://foxfashion.sg");
@@ -34,11 +34,11 @@ public class TestShirts {
         
         int persent=0;
         if(golfShirt<foxShirt) {
-        	persent=(int)(golfShirt/foxShirt*100);
+        	persent=(int)(100-(golfShirt/foxShirt*100));
         	System.out.println("Golf shirt is cheaper by "+persent+" % than Fox shirt");
         }
         if(golfShirt>foxShirt) {
-        	persent=(int) (foxShirt/golfShirt*100);
+        	persent=(int) (100-(foxShirt/golfShirt*100));
         	System.out.println("Fox shirt is cheaper by "+persent+" % than Golf shirt");
         }
         
